@@ -4,7 +4,6 @@ const Product = require('../models/Product');
 const createCustomerOrder = async (req, res) => {
   const { items } = req.body;
   try {
-    // Verifique se os produtos existem e se há estoque suficiente
     for (const item of items) {
       const product = await Product.findById(item.productId);
       if (!product) {
@@ -14,8 +13,6 @@ const createCustomerOrder = async (req, res) => {
         return res.status(400).json({ error: `Insufficient stock for product ${product.name}` });
       }
     }
-
-    // Atualize a quantidade de produtos no estoque
     for (const item of items) {
       await Product.findByIdAndUpdate(item.productId, { $inc: { quantity: -item.quantity } });
     }
