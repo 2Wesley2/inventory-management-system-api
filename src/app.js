@@ -10,7 +10,9 @@ mongoose.connect(process.env.MONGO_URI);
 app.use(express.json());
 
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
 
 app.get('/', (req, res) => {
   res.send('Inventory Management System');
