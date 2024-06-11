@@ -26,7 +26,7 @@ A Inventory Management System API é uma API RESTful desenvolvida para gerenciar
    npm install
     ```
 
-3. Criearquivo `.env` na raiz do projeto com o seguinte conteúdo:
+3. Crie o arquivo `.env` na raiz do projeto com o seguinte conteúdo:
 
    ```.env
    PORT=3000
