@@ -15,12 +15,14 @@ const categoryRoutes = require('./routes/categoryRoutes')
 const purchaseOrderRoutes = require('./routes/purchaseOrderRoutes');
 const customerOrderRoutes = require('./routes/customerOrderRoutes');
 const employeeRoutes = require('./routes/employeeRoutes');
+const productMovementRoutes = require('./routes/productMovementRoutes');
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/purchase-orders', purchaseOrderRoutes);
 app.use('/api/customer-orders', customerOrderRoutes);
 app.use('/api/employees', employeeRoutes);
+app.use('/api/product-movements', productMovementRoutes);
 
 app.get('/', (req, res) => {
   res.send('Inventory Management System');
