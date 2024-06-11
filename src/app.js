@@ -12,9 +12,11 @@ app.use(express.json());
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const categoryRoutes = require('./routes/categoryRoutes')
+const purchaseOrderRoutes = require('./routes/purchaseOrderRoutes');
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
+app.use('/api/purchase-orders', purchaseOrderRoutes);
 
 app.get('/', (req, res) => {
   res.send('Inventory Management System');
